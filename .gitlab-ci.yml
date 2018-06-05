@@ -1,0 +1,10 @@
+image: node:carbon
+
+publish:
+  when: manual
+  only:
+  - master
+  script:
+  - yarn
+  - echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc
+  - npm publish

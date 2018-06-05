@@ -1,0 +1,71 @@
+{
+  "fields": [
+    {
+      "mode": "NULLABLE",
+      "name": "eventTime",
+      "type": "TIMESTAMP"
+    },
+    {
+      "mode": "NULLABLE",
+      "name": "device",
+      "type": "STRING"
+    },
+    {
+      "mode": "REPEATED",
+      "name": "realizedTraits",
+      "type": "STRING"
+    },
+    {
+      "fields": [
+        {
+          "mode": "NULLABLE",
+          "name": "value",
+          "type": "STRING"
+        },
+        {
+          "mode": "NULLABLE",
+          "name": "key",
+          "type": "STRING"
+        }
+      ],
+      "mode": "REPEATED",
+      "name": "requestParameters",
+      "type": "RECORD"
+    },
+    {
+      "mode": "NULLABLE",
+      "name": "referer",
+      "type": "STRING"
+    },
+    {
+      "mode": "REPEATED",
+      "name": "allTraits",
+      "type": "STRING"
+    },
+    {
+      "mode": "REPEATED",
+      "name": "allSegments",
+      "type": "STRING"
+    },
+    {
+      "mode": "NULLABLE",
+      "name": "containerId",
+      "type": "STRING"
+    },
+    {
+      "mode": "NULLABLE",
+      "name": "ip",
+      "type": "STRING"
+    },
+    {
+      "mode": "REPEATED",
+      "name": "realizedSegments",
+      "type": "STRING"
+    },
+    {
+      "mode": "NULLABLE",
+      "name": "mid",
+      "type": "STRING"
+    }
+  ]
+}

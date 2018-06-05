@@ -1,0 +1,16 @@
+{
+  "name": "aam-cdf-parser",
+  "version": "1.0.0",
+  "description": "Adobe Audience Manager logs parser",
+  "main": "parser.js",
+  "author": "Daniel Iñigo <dinigo@divisadero.es>",
+  "license": "MIT",
+  "dependencies": {
+    "byline": "^5.0.0",
+    "streamspeed": "^1.1.1"
+  },
+  "devDependencies": {
+    "chalk-animation": "^1.6.0",
+    "jsdoc": "^3.5.5"
+  }
+}
