@@ -42,6 +42,4 @@ const chalkAnimation = require('chalk-animation');
 
 const [, , inputFile, outputFile] = process.argv;
 chalkAnimation.rainbow(`Procesando el archivo ${inputFile} -------> ${outputFile}`);
-local(inputFile, outputFile).on('finish', () => {
-    console.log('finished!');
-});
+local(inputFile, outputFile).then(() => {console.log('finish')});

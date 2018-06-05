@@ -150,11 +150,42 @@ function parse(inputStream, outputStream) {
  * Convenience function to parse local files
  * @param inputFile
  * @param outputFile
+ * @return {Promise<boolean>}
  */
 function local(inputFile, outputFile) {
     const input = fs.createReadStream(inputFile);
     const output = fs.createWriteStream(outputFile);
-    return parse(input, output);
+    return promiseParse(input, output);
 }
 
-module.exports = {parse, local};
+/**
+ * Processes input into output streams and calls the callback when it's done
+ * @param inputStream
+ * @param outputStream
+ * @param {Function} callback
+ */
+function callbackParse(inputStream, outputStream, callback) {
+    parse(inputStream, outputStream)
+      .on('finish', () => {
+          callback(null, true)
+      })
+      .on('error', err => {
+          callback(err)
+      });
+}
+
+/**
+ * Processes input into output streams and resolves a promise when it's done
+ * @param inputStream
+ * @param outputStream
+ * @returns {Promise<boolean>}
+ */
+function promiseParse(inputStream, outputStream) {
+    return new Promise((resolve, reject) => {
+        callbackParse(inputStream, outputStream, (err, flag) => {
+            err? reject(err) : resolve(flag);
+        })
+    })
+}
+
+module.exports = {parse, local, promiseParse, callbackParse};
