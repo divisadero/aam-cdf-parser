@@ -5,6 +5,9 @@
   "main": "parser.js",
   "author": "Daniel Iñigo <dinigo@divisadero.es>",
   "license": "MIT",
+  "scripts": {
+    "docs": "jsdoc parser.js --readme README.md --package package.json --destination public"
+  },
   "dependencies": {
     "byline": "^5.0.0",
     "streamspeed": "^1.1.1"
