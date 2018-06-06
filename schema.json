@@ -1,28 +1,34 @@
 {
   "fields": [
     {
+      "description": "When the hit happened",
       "mode": "NULLABLE",
       "name": "eventTime",
       "type": "TIMESTAMP"
     },
     {
+      "description": "Device identifier",
       "mode": "NULLABLE",
       "name": "device",
       "type": "STRING"
     },
     {
+      "description": "Qualified traits",
       "mode": "REPEATED",
       "name": "realizedTraits",
       "type": "STRING"
     },
     {
+      "description": "Parameters sent to infer an audience",
       "fields": [
         {
+          "description": "Param value sent",
           "mode": "NULLABLE",
           "name": "value",
           "type": "STRING"
         },
         {
+          "description": "Param key sent",
           "mode": "NULLABLE",
           "name": "key",
           "type": "STRING"
@@ -33,36 +39,43 @@
       "type": "RECORD"
     },
     {
+      "description": "Page referer",
       "mode": "NULLABLE",
       "name": "referer",
       "type": "STRING"
     },
     {
+      "description": "All traits involved with the current hit",
       "mode": "REPEATED",
       "name": "allTraits",
       "type": "STRING"
     },
     {
+      "description": "All segments involved with the current hit",
       "mode": "REPEATED",
       "name": "allSegments",
       "type": "STRING"
     },
     {
+      "description": "Container ID",
       "mode": "NULLABLE",
       "name": "containerId",
       "type": "STRING"
     },
     {
+      "description": "Client IP",
       "mode": "NULLABLE",
       "name": "ip",
       "type": "STRING"
     },
     {
+      "description": "Qualified segments",
       "mode": "REPEATED",
       "name": "realizedSegments",
       "type": "STRING"
     },
     {
+      "description": "Experience Cloud Device ID",
       "mode": "NULLABLE",
       "name": "mid",
       "type": "STRING"

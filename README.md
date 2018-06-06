@@ -26,6 +26,25 @@ Simply use your preffered node package manager to add it:
 yarn add aam-cdf-parser
 ```
 
+## Local tryout
+
+A small demonstration script is provided to checkout how it works in general
+lines. It can be found in `cmd.js`. You can invoke it with:
+```sh
+./cmd.js input.gz output.ndj
+```
+
+## Create tables
+
+We provide a small script for creating the table in BigQuery with the current
+schema (defined in `schema.json`). To create the table just load the schema
+on the Web UI or call the script from te terminal like so:
+```sh
+./mktable.js my_dataset
+```
+This creates in BigQuery a partitioned table (by event time, not ingestion) so
+you can insert generated files directly.
+
 ## Usage
 
 ### Method `parse`
