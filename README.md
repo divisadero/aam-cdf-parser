@@ -1,8 +1,8 @@
 # AAM CDF Parser
 
-![npm](https://img.shields.io/npm/v/aam-cdf-parser.svg?style=flat-square)
-![npm](https://img.shields.io/npm/dt/aam-cdf-parser.svg?style=flat-square)
-![npm](https://img.shields.io/npm/l/aam-cdf-parser.svg?style=flat-square)
+![package version](https://badge.fury.io/js/aam-cdf-parser.svg)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+![dependencies](https://david-dm.org/divisadero/aam-cdf-parser.svg)
 
 Here you have a tool for parsing Adobe Audience Manager CDF files. Those
 are the log files from the DMP platform from Adobe. They use a
