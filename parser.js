@@ -27,7 +27,23 @@
  * This module processes an Adobe Audience Manager (AAM) Data Feed (CDF) file and turns it
  * into a New Line delimited JSON file (NDJ)
  * @author Daniel Iñigo <dinigo@divisadero.es>
- * @module aam-cdf-parser
+ */
+
+/**
+ * @typedef {object} Log - Object representing an AAM CDF log line
+ * @property {number} eventTime - Time of the event
+ * @property {string} device - Device id that originated the event
+ * @property {string} containerId - Container in which the event happened
+ * @property {string[]} realizedTraits - Related traits
+ * @property {string[]} realizedSegments - Related segments
+ * @property {object[]} requestParameters - Parameters involved in the call to AAM
+ * @property {string} requestParameters[].key - Parameter key
+ * @property {string} requestParameters[].value - Parameter value URL decoded into regular string
+ * @property {string} referer - URL preceding the current site
+ * @property {string} ip - IP that originated the call
+ * @property {string} mid - MID
+ * @property {string[]} allSegments - All related segments
+ * @property {string[]} allTraits - All related traits
  */
 
 const zlib = require('zlib');
@@ -61,11 +77,7 @@ const KEYVAL_SEPARATOR = '\x03';
  * Parse an Adobe Audience Manager log line
  * @see [Adobe CDF documentation]{@link https://marketing.adobe.com/resources/help/en_US/aam/cdf-file-structure.html}
  * @param line - Adobe Audience Manager CDF
- * @returns {{
- *      eventTime: number, device: string, containerId: string, realizedTraits: string[],
- *      realizedSegments: string[], requestParameters: {key: string, value: string}[],
- *      referer: string, ip: string, mid: string, allSegments: string[], allTraits: string[]
- * }} The log object
+ * @returns {Log} The log object
  */
 function parseLogLine(line) {
     // split the line into the fields
